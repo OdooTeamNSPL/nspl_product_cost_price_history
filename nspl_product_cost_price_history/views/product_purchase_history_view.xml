@@ -1,0 +1,49 @@
+<odoo>
+    <!-- Template Level View -->
+    <record id="view_product_template_purchase_history" model="ir.ui.view">
+        <field name="name">product.template.purchase.history.tab</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='general_information']" position="after">
+                <page name="purchase_history_tab" string="Purchase History">
+                    <field name="purchase_line_ids" nolabel="1">
+                        <tree editable="bottom">
+                            <field name="partner_id"/>
+                            <field name="order_id"/>
+                            <field name="order_date"/>
+                            <field name="product_id"/>
+                            <field name="product_qty"/>
+                            <field name="price_unit"/>
+                            <field name="order_state"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Variant Level View -->
+    <record id="view_product_product_form_purchase_history" model="ir.ui.view">
+        <field name="name">product.product.purchase.history.tab</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='inventory']" position="after">
+                <page name="purchase_history_tab" string="Purchase History">
+                    <field name="variant_purchase_line_ids" nolabel="1">
+                        <tree editable="bottom">
+                            <field name="partner_id"/>
+                            <field name="order_id"/>
+                            <field name="order_date"/>
+                            <field name="product_id"/>
+                            <field name="product_qty"/>
+                            <field name="price_unit"/>
+                            <field name="order_state"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
