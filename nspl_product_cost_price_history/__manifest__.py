@@ -1,6 +1,6 @@
 {
     'name': 'Product Cost Price History',
-    'version': '18.0',
+    'version': '19.0.1',
     'summary': 'Track and view historical product cost prices from different suppliers with filter and limit options.',
     'description': """
 This module useful to show the history of the cost price for the product, you can also track the history of 
